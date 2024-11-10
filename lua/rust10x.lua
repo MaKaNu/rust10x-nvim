@@ -2,9 +2,11 @@
 local module = require("rust10x.module")
 
 ---@class Config
----@field opt string Your config option
+---@field opt table Your config option
 local config = {
-  opt = "Hello!",
+  opt = {
+    snippetDir = vim.fn.stdpath("config") .. "/snippets",
+  },
 }
 
 ---@class MyModule
@@ -21,7 +23,7 @@ M.setup = function(args)
 end
 
 M.pull = function()
-  return module.pull_snippets(M.config.opt)
+  return module.pull_snippets(M.config.opt.snippetDir)
 end
 
 return M
