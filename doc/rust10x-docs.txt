@@ -1,22 +1,22 @@
-*my-template-docs.txt*    For Neovim >= 0.8.0    Last change: 2024 November 10
+*rust10x-docs.txt*      For Neovim >= 0.8.0      Last change: 2024 November 10
 
 ==============================================================================
-Table of Contents                         *my-template-docs-table-of-contents*
+Table of Contents                             *rust10x-docs-table-of-contents*
 
-1. A Neovim Plugin Template        |my-template-docs-a-neovim-plugin-template|
-  - Using it              |my-template-docs-a-neovim-plugin-template-using-it|
-  - Features and structure|my-template-docs-a-neovim-plugin-template-features-and-structure|
-2. Links                                              |my-template-docs-links|
+1. A Neovim Plugin Template            |rust10x-docs-a-neovim-plugin-template|
+  - Using it                  |rust10x-docs-a-neovim-plugin-template-using-it|
+  - Features and structure|rust10x-docs-a-neovim-plugin-template-features-and-structure|
+2. Links                                                  |rust10x-docs-links|
 
 ==============================================================================
-1. A Neovim Plugin Template        *my-template-docs-a-neovim-plugin-template*
+1. A Neovim Plugin Template            *rust10x-docs-a-neovim-plugin-template*
 
 
 
 A template repository for Neovim plugins.
 
 
-USING IT                  *my-template-docs-a-neovim-plugin-template-using-it*
+USING IT                      *rust10x-docs-a-neovim-plugin-template-using-it*
 
 Via `gh`
 
@@ -31,7 +31,7 @@ Click on `Use this template`
 
 
 
-FEATURES AND STRUCTURE*my-template-docs-a-neovim-plugin-template-features-and-structure*
+FEATURES AND STRUCTURE*rust10x-docs-a-neovim-plugin-template-features-and-structure*
 
 - 100% Lua
 - Github actions for:
@@ -60,7 +60,7 @@ PLUGIN STRUCTURE ~
 <
 
 ==============================================================================
-2. Links                                              *my-template-docs-links*
+2. Links                                                  *rust10x-docs-links*
 
 1. *GitHub Workflow Status*: https://img.shields.io/github/actions/workflow/status/ellisonleao/nvim-plugin-template/lint-test.yml?branch=main&style=for-the-badge
 2. *Lua*: https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua
