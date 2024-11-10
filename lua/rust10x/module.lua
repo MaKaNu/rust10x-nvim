@@ -2,11 +2,12 @@
 local M = {}
 
 ---@return string
-M.pull_snippets = function(snippets_path)
+M.pull_snippets = function(snippets_location)
   local Path = require("plenary.path")
   local Job = require("plenary.job")
 
   local snippets_repo_path = "/tmp/rust10x.temp"
+  local snippets_path = Path:new(snippets_location)
 
   local snippets_repo = Path:new(snippets_repo_path)
 
@@ -24,10 +25,7 @@ M.pull_snippets = function(snippets_path)
   end
 
   if not snippets_path:exists() then
-    Job:new({
-      command = "mkdir",
-      args = { snippets_path.absolute() },
-    }):sync()
+    snippets_path.mkdir()
   end
 
   Job:new({
@@ -35,7 +33,7 @@ M.pull_snippets = function(snippets_path)
     args = { snippets_repo:absolute() .. "snippets", snippets_path.absolute() },
   }):sync()
 
-  return snippets_path
+  return snippets_location
 end
 
 return M
