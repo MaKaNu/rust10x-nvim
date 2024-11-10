@@ -2,8 +2,8 @@
 local M = {}
 
 ---@return string
-M.my_first_function = function(greeting)
-  return greeting
+M.pull_snippets = function(location)
+  return location
 end
 
 return M
