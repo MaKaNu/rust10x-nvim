@@ -10,6 +10,6 @@ describe("setup", function()
 
   it("works with custom var", function()
     plugin.setup({ opt = { snippetDir = "custom" } })
-    assert(plugin.pull() == "custom", "my first function with param = custom")
+    assert(plugin.pull() == "custom", "pull function with param = custom")
   end)
 end)
