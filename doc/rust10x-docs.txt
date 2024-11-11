@@ -1,4 +1,4 @@
-*rust10x-docs.txt*      For Neovim >= 0.8.0      Last change: 2024 November 10
+*rust10x-docs.txt*      For Neovim >= 0.8.0      Last change: 2024 November 11
 
 ==============================================================================
 Table of Contents                             *rust10x-docs-table-of-contents*
