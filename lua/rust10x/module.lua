@@ -25,7 +25,7 @@ M.pull_snippets = function(snippets_location)
   end
 
   if not snippets_path:exists() then
-    snippets_path.mkdir(snippets_path)
+    snippets_path:mkdir({ parents = true })
   end
 
   local snippets = Path:new(snippets_repo:absolute() .. "/snippets")
