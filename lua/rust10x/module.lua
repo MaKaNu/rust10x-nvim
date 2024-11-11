@@ -20,12 +20,12 @@ M.pull_snippets = function(snippets_location)
   else
     Job:new({
       command = "git",
-      args = { "clone", "https://github.com/your-forked-snippets-repo", snippets_repo:absolute() },
+      args = { "clone", "https://github.com/rust10x/rust10x-vscode", snippets_repo:absolute() },
     }):sync()
   end
 
   if not snippets_path:exists() then
-    snippets_path.mkdir()
+    snippets_path:mkdir()
   end
 
   Job:new({
