@@ -28,11 +28,9 @@ M.pull_snippets = function(snippets_location)
     snippets_path.mkdir(snippets_path)
   end
 
-  Job:new({
-    command = "cp",
-    args = { snippets_repo:absolute() .. "snippets", snippets_path.absolute() },
-  }):sync() ]]
-  ---
+  local snippets = Path:new(snippets_repo:absolute() .. "/snippets")
+  snippets:copy({ destination = snippets_path:absolute(), recursive = true })
+
   return snippets_location
 end
 
