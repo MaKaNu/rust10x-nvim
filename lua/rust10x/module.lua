@@ -24,7 +24,7 @@ M.pull_snippets = function(snippets_location)
     }):sync()
   end
 
-  --[[  if not snippets_path:exists() then
+  if not snippets_path:exists() then
     snippets_path.mkdir(snippets_path)
   end
 
