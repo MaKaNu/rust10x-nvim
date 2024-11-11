@@ -1,47 +1,58 @@
-# A Neovim Plugin Template
+# Rust10x Neovim
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ellisonleao/nvim-plugin-template/lint-test.yml?branch=main&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/makanu/rust10x-nvim/lint-test.yml?branch=main&style=for-the-badge)
 ![Lua](https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua)
 
-A template repository for Neovim plugins.
+A simple plugin to pull the latest state of the [Rust10x Vscode](https://github.com/rust10x/rust10x-vscode) snippets.
 
-## Using it
+## Features
 
-Via `gh`:
+- install or update rust10x snippets.
 
+## Requirements
+
+- nvim 0.10+
+- A snippet engine that can load  VSCode-style snippets, such as:
+  - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+  - [blink.cmp](http://support.blinkforhome.com/en_US/account-and-login)
+  - [basics-language-server](https://github.com/antonk52/basics-language-server/)
+  - [nvim-snippets](https://github.com/garymjr/nvim-snippets)
+  - [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)
+
+## Installation
+
+### rust10x-nvim
+
+```lua
+-- lazy.nvim
+{
+ "makanu/rust10x-nvim",
+ opts = {
+  snippetDir = "path/to/your/snippetFolder",
+ } 
+},
+
+-- packer
+use {
+ "makanu/nvim-scissors",
+ config = function()
+  require("rust10x").setup ({
+   snippetDir = "path/to/your/snippetFolder",
+    })
+ end,
+}
 ```
-$ gh repo create my-plugin -p ellisonleao/nvim-plugin-template
-```
 
-Via github web page:
+## Usage
 
-Click on `Use this template`
+For the moment only the command `Pull10xSnippets` is provided.
+Calling the command will create a temporary clone of the rust10x-vscode repo.
+The snippets are copied to the desired snippet location (Default: `~/.config/nvim/snippets`)
 
-![](https://docs.github.com/assets/cb-36544/images/help/repository/use-this-template-button.png)
+## Todo
 
-## Features and structure
-
-- 100% Lua
-- Github actions for:
-  - running tests using [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) and [busted](https://olivinelabs.com/busted/)
-  - check for formatting errors (Stylua)
-  - vimdocs autogeneration from README.md file
-  - luarocks release (LUAROCKS_API_KEY secret configuration required)
-
-### Plugin structure
-
-```
-.
-├── lua
-│   ├── plugin_name
-│   │   └── module.lua
-│   └── plugin_name.lua
-├── Makefile
-├── plugin
-│   └── plugin_name.lua
-├── README.md
-├── tests
-│   ├── minimal_init.lua
-│   └── plugin_name
-│       └── plugin_name_spec.lua
-```
+- Fix config loading
+- Refactor for better/actual testing
+- Implement notify
+- Add options for version tags
+- Add options for different snippet repo (This might change the name of the plugin)
