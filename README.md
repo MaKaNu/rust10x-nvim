@@ -24,12 +24,17 @@ A simple plugin to pull the latest state of the [Rust10x Vscode](https://github.
 ### rust10x-nvim
 
 ```lua
+ 
 -- lazy.nvim
 {
  "makanu/rust10x-nvim",
- opts = {
-  snippetDir = "path/to/your/snippetFolder",
- } 
+  config = function()
+   require("rust10x").setup({
+    opt = {
+     snippetDir = "path/to/your/snippetFolder",
+    },
+  })
+ end,
 },
 
 -- packer
@@ -37,8 +42,10 @@ use {
  "makanu/nvim-scissors",
  config = function()
   require("rust10x").setup ({
-   snippetDir = "path/to/your/snippetFolder",
-    })
+   opt = { 
+    snippetDir = "path/to/your/snippetFolder",
+   }
+  })
  end,
 }
 ```
