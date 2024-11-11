@@ -24,15 +24,15 @@ M.pull_snippets = function(snippets_location)
     }):sync()
   end
 
-  if not snippets_path:exists() then
-    snippets_path:mkdir()
+  --[[  if not snippets_path:exists() then
+    snippets_path.mkdir(snippets_path)
   end
 
   Job:new({
     command = "cp",
     args = { snippets_repo:absolute() .. "snippets", snippets_path.absolute() },
-  }):sync()
-
+  }):sync() ]]
+  ---
   return snippets_location
 end
 
