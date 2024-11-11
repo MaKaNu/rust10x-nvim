@@ -42,12 +42,17 @@ INSTALLATION                        *rust10x-docs-rust10x-neovim-installation*
 RUST10X-NVIM ~
 
 >lua
+     
     -- lazy.nvim
     {
      "makanu/rust10x-nvim",
-     opts = {
-      snippetDir = "path/to/your/snippetFolder",
-     } 
+      config = function()
+       require("rust10x").setup({
+        opt = {
+         snippetDir = "path/to/your/snippetFolder",
+        },
+      })
+     end,
     },
     
     -- packer
@@ -55,8 +60,10 @@ RUST10X-NVIM ~
      "makanu/nvim-scissors",
      config = function()
       require("rust10x").setup ({
-       snippetDir = "path/to/your/snippetFolder",
-        })
+       opt = { 
+        snippetDir = "path/to/your/snippetFolder",
+       }
+      })
      end,
     }
 <
